@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界杯投注 · 信息指引</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #faf8f3;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #2b2b2b;
+            line-height: 1.7;
+            padding: 2rem 1.5rem;
+        }
+        .page {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03), 0 2px 6px rgba(0, 0, 0, 0.02);
+            padding: 2.5rem 2rem;
+        }
+        @media (max-width: 640px) {
+            body { padding: 1rem 0.75rem; }
+            .page { padding: 1.75rem 1.25rem; border-radius: 20px; }
+        }
+
+        /* 主视觉区 —— 信息卡片式 */
+        .hero-card {
+            background: #f5f0e8;
+            border-radius: 24px;
+            padding: 2rem 1.8rem;
+            margin-bottom: 2.8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .hero-tag {
+            display: inline-block;
+            background: #d9cdb7;
+            color: #3d362a;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            padding: 0.25rem 0.9rem;
+            border-radius: 30px;
+            width: fit-content;
+            text-transform: uppercase;
+        }
+        .hero-card h1 {
+            font-size: 2rem;
+            font-weight: 550;
+            letter-spacing: -0.02em;
+            color: #1e1b15;
+            line-height: 1.25;
+        }
+        .hero-card p {
+            font-size: 1.05rem;
+            color: #3f3a30;
+            max-width: 70%;
+        }
+        @media (max-width: 600px) {
+            .hero-card h1 { font-size: 1.6rem; }
+            .hero-card p { max-width: 100%; }
+        }
+
+        /* 通用标题 */
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 520;
+            letter-spacing: -0.01em;
+            color: #1e1b15;
+            margin: 2.2rem 0 1rem;
+            border-left: 4px solid #b6a68b;
+            padding-left: 1rem;
+        }
+        h2:first-of-type {
+            margin-top: 0.2rem;
+        }
+
+        /* 卡片网格 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        @media (max-width: 560px) {
+            .card-grid { grid-template-columns: 1fr; }
+        }
+        .info-card {
+            background: #f9f6f1;
+            padding: 1.5rem 1.4rem;
+            border-radius: 20px;
+            border: 1px solid #ede7dd;
+            transition: box-shadow 0.2s ease;
+        }
+        .info-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+        .info-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d281f;
+            margin-bottom: 0.5rem;
+        }
+        .info-card p {
+            font-size: 0.95rem;
+            color: #4b453b;
+        }
+
+        /* 引用 / 提示框 */
+        .callout {
+            background: #f4efe7;
+            border-left: 6px solid #b6a68b;
+            padding: 1.2rem 1.5rem;
+            border-radius: 16px;
+            margin: 2rem 0 1.5rem;
+            font-size: 0.98rem;
+        }
+        .callout strong {
+            color: #2b251c;
+            font-weight: 600;
+        }
+
+        /* 适合人群 列表 */
+        .audience-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.2rem;
+            margin: 0.6rem 0 1.4rem;
+        }
+        .audience-list li {
+            background: #f1ece3;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            color: #3d382e;
+            border: 1px solid #e1d9cb;
+        }
+
+        /* 段落与链接 */
+        .link-sentence {
+            background: #fcfaf7;
+            border-radius: 18px;
+            padding: 1.2rem 1.5rem;
+            margin: 1.8rem 0 1rem;
+            border: 1px solid #e8e1d6;
+        }
+        .link-sentence p {
+            margin-bottom: 0.3rem;
+        }
+        a {
+            color: #7a6a4f;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid #d4c9b8;
+            transition: border-color 0.15s, color 0.15s;
+        }
+        a:hover {
+            color: #4d4030;
+            border-bottom-color: #7a6a4f;
+        }
+
+        /* FAQ 摘要 */
+        .faq-mini {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 1.6rem 0 1rem;
+        }
+        .faq-item {
+            border-bottom: 1px solid #ece6db;
+            padding-bottom: 0.8rem;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-q {
+            font-weight: 600;
+            color: #2d281f;
+            font-size: 0.98rem;
+            margin-bottom: 0.2rem;
+        }
+        .faq-a {
+            color: #514b40;
+            font-size: 0.92rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e6dfd2;
+            margin: 2.2rem 0 1rem;
+        }
+        .footer-note {
+            font-size: 0.82rem;
+            color: #7d7567;
+            text-align: center;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 主视觉卡片 -->
+    <div class="hero-card">
+        <span class="hero-tag">信息卡片 · 用途速览</span>
+        <h1>世界杯投注 &nbsp;—&nbsp; 快速识别网站用途</h1>
+        <p>一个围绕世界杯赛事提供投注信息与指向的平台。页面右侧卡片整理了主要使用方向。</p>
+    </div>
+
+    <!-- 用途卡片 两列 -->
+    <h2>用途卡片</h2>
+    <div class="card-grid">
+        <div class="info-card">
+            <h3>⚽ 赛事与赔率</h3>
+            <p>集中展示世界杯各场次的基础赔率、盘口变化以及球队动态，方便用户对比不同选项。</p>
+        </div>
+        <div class="info-card">
+            <h3>📋 投注参考</h3>
+            <p>提供赛事数据、历史交锋、阵容信息等客观内容，帮助用户自行判断，不构成投注建议。</p>
+        </div>
+        <div class="info-card">
+            <h3>📊 统计与趋势</h3>
+            <p>整合球队近期表现、进球分布、红黄牌等统计，以清晰图表或列表呈现，减少信息查找时间。</p>
+        </div>
+        <div class="info-card">
+            <h3>🔐 账户与安全</h3>
+            <p>包含账户设置、资金存取说明、隐私保护等指引，确保用户在了解规则的前提下使用服务。</p>
+        </div>
+    </div>
+
+    <!-- 引用提示框 -->
+    <div class="callout">
+        <strong>使用前提示</strong> · 任何涉及真金投注的行为均有风险。建议仅使用可承受的资金参与，并提前了解当地法律法规。<br>
+        本页面仅作信息展示用途，不鼓励过度投注。
+    </div>
+
+    <!-- 适合人群 -->
+    <h2>适合人群</h2>
+    <ul class="audience-list">
+        <li>世界杯观赛球迷</li>
+        <li>希望系统了解赔率的用户</li>
+        <li>需要赛事数据参考的投注者</li>
+        <li>想对比不同盘口信息的访客</li>
+        <li>对世界杯投注流程好奇的新手</li>
+    </ul>
+
+    <!-- 自然链接段落 -->
+    <div class="link-sentence">
+        <p>如果你正在寻找一个整合世界杯投注信息的平台，可以直接了解 <a href="https://main-worldcupwager.com">世界杯投注</a> 所提供的基础赔率与赛事数据模块，页面结构以信息展示为主，不包含诱导性内容。</p>
+        <p style="margin-top: 0.5rem;">另外，该网站也包含常见问题与规则说明，适合希望快速熟悉投注逻辑的用户先浏览再决定是否使用。</p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <h2>常见问题 · 摘要</h2>
+    <div class="faq-mini">
+        <div class="faq-item">
+            <div class="faq-q">这个网站提供实时赔率吗？</div>
+            <div class="faq-a">页面会更新主要赛事的赔率与盘口变化，但具体延迟程度取决于数据来源。建议同时参考多个渠道。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">是否需要注册才能查看信息？</div>
+            <div class="faq-a">大部分基础信息（如赔率、球队数据）无需注册即可浏览。部分进阶功能可能要求创建账户。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">投注前应该注意什么？</div>
+            <div class="faq-a">确认自己的年龄符合法定要求，了解所在地区关于体育博彩的规定，并设置个人资金上限。</div>
+        </div>
+    </div>
+
+    <hr>
+    <div class="footer-note">
+        信息卡片式介绍 · 基于真实页面结构整理 · 无投注建议
+    </div>
+
+</div>
+</body>
+</html>
